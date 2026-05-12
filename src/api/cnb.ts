@@ -49,11 +49,11 @@ export const parseCnbText = (text: string): ExchangeRate[] => {
     .filter((row): row is ExchangeRate => row !== null);
 };
 
-const CNB_URL =
+const DAILY_RATES_EXPORT_PATH =
   '/api/cnb/en/financial-markets/foreign-exchange-market/central-bank-exchange-rate-fixing/central-bank-exchange-rate-fixing/daily.txt';
 
 export const fetchExchangeRates = async (): Promise<ExchangeRate[]> => {
-  const response = await fetch(CNB_URL);
+  const response = await fetch(DAILY_RATES_EXPORT_PATH);
   if (!response.ok) {
     throw new Error(`Failed to fetch CNB rates: ${response.status}`);
   }

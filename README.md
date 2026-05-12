@@ -24,6 +24,15 @@ npm run dev
 The dev server proxies `/api/cnb/*` to `https://www.cnb.cz/*` (see
 [vite.config.ts](vite.config.ts)) to avoid CORS issues during development.
 
+### Environment variables
+
+The dev proxy target is read from `VITE_CNB_BASE_URL` (see
+[.env.example](.env.example)) with a hardcoded fallback to `https://www.cnb.cz`.
+Copy `.env.example` to `.env.local` if you need to point dev at a different host
+(e.g. a staging mirror). The production rewrite in [vercel.json](vercel.json)
+mirrors the same base URL, but is hardcoded — `vercel.json` does not read env
+vars.
+
 ### Available scripts
 
 | Script | Description |
