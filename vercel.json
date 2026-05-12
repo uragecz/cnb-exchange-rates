@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/cnb/:path*",
+      "destination": "https://www.cnb.cz/:path*"
+    }
+  ]
+}
